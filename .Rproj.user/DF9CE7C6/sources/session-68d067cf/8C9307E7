@@ -1,0 +1,26 @@
+{
+    "id": "8C9307E7",
+    "path": "N:/work/OCUC/nlp/nlp.R",
+    "project_path": "nlp.R",
+    "type": "r_source",
+    "hash": "553793798",
+    "contents": "",
+    "dirty": false,
+    "created": 1698330146053.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Sourcegfnd9mty4cfl",
+        "cursorPosition": "164,0",
+        "scrollLine": "23"
+    },
+    "folds": "0|6|8|0|\n9|7|14|0|\n15|6|25|0|\n26|11|44|0|\n28|36|43|0|\n45|6|59|0|\n60|10|92|0|\n93|19|118|0|\n119|9|158|0|\n",
+    "lastKnownWriteTime": 1699299773,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1699358382669,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,28 @@
+{
+    "id": "9D453A2D",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1699283547455.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "29abae827d2142c6b5331b6ad3352a4f",
+        "name": "tdm",
+        "title": "tdm",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Sourcegfnd9mty4cfl"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7810137183494370145,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1699283547455,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,28 @@
+{
+    "id": "E6EC9863",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1699283598819.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "id": "6a34b697c1274898adf8b7a8fabfaadc",
+        "name": "ctdm",
+        "title": "ctdm",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Sourcegfnd9mty4cfl"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2591998777304,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1699283598819,
+    "read_only": false,
+    "read_only_alternatives": []
+}
