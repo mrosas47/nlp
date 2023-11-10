@@ -22,7 +22,7 @@
 
 suppressWarnings({
   
-  xfun::pkg_attach(c('dplyr', 'stringr', 'pdftools', 'cli', 'tm', 'tidytext', 'tidyr', 'scraEP', 'rtoolbox', 'knitr', 'qdapDictionaries', 'tools'), message = F, install = T)
+  xfun::pkg_attach(c('dplyr', 'stringr', 'pdftools', 'cli', 'tm', 'tidytext', 'tidyr', 'scraEP', 'rtoolbox', 'knitr', 'qdapDictionaries', 'tools', 'beepr', 'topicmodels'), message = F, install = T)
   
 })
 
@@ -52,14 +52,17 @@ context <- function(body, word, n) {
 
 # Ensure working directory
 wdEnsure('N:/work/OCUC/nlp')
+
+# Misc
 start_time <- rtime()
+options(scipen = 999)
 
 # Keywords
 key <- unaccent(c('verticalización', 'densificación', 'densidad', 'renovación', 'crecimiento', 'vertical', 'verticalidad', 'verticalizar', 'crecer', 'densificar', 'renovar', 'altura', 'constructibilidad', 'edificabilidad', 'volumen', 'crecimiento'))
 # key <- 'densidad'
 
 # Problematic symbols
-problems <- c('‘', '’', '“', '”', '„', '°')
+problems <- c('‘', '’', '“', '”', '„', '°', '•')
 
 # Spanish language handling
 cli_alert(str_glue('{rtime()} -- Making Spanish language word list'))
@@ -97,7 +100,6 @@ for (sd in list.dirs('data', recursive = F)[1]) {
         suppressMessages({
           
           testfile <- pdf_text(str_glue('{f}'))
-          
           
         })
         
@@ -265,6 +267,29 @@ for (sd in list.dirs('data', recursive = F)[1]) {
           
         }
         
+        # Topic analysis-------------------------------------------------------
+        
+        cli_h2(str_glue('{rtime()} -- Topic analysis'))
+        
+        topic_corp <- Corpus(VectorSource(text_df$text))
+        
+        dtm <- DocumentTermMatrix(topic_corp, control = list(wordLengths = c(3, Inf)))
+        
+        n_topics <- 5
+        
+        tryCatch({
+          
+          lda_model <- LDA(dtm, k = n_topics, control = list(seed = 1234))
+          
+        }, error = function(e) {
+          
+          cli_alert_danger(str_glue('{rtime()} -- {e}'))
+        
+        })
+        
+        
+        print(terms(lda_model, 10))
+            
     }
     
   }
@@ -272,3 +297,4 @@ for (sd in list.dirs('data', recursive = F)[1]) {
 }
 
 cli_alert_success(str_glue('{rtime()} -- All done mate!'))
+beep(3)
